@@ -5,6 +5,7 @@ This is an example plugin, with acceptance tests written with Codeception, runni
 ## Requirements
 
 - [Docker](https://www.docker.com/community-edition)
+- Add your plugin path to the shared paths in Docker -> Preferences... -> File Sharing
 
 ## Setup
 
