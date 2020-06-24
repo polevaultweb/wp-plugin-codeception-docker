@@ -1,0 +1,6 @@
+acceptance-tests/_output
+acceptance-tests/_data/tmp
+.env
+codeception.yml
+.env.local
+composer.lock

@@ -1,0 +1,18 @@
+{
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/polevaultweb/Codeception-Mailtrap"
+    }
+  ],
+  "require-dev": {
+    "lucatume/wp-browser": "^2.2",
+    "whatdafox/codeception-mailtrap": "^1.4",
+    "polevaultweb/codeception-wait": "^1.0"
+  },
+  "config": {
+    "platform": {
+      "php": "7.2"
+    }
+  }
+}

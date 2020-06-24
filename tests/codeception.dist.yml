@@ -1,0 +1,49 @@
+actor: Tester
+params:
+    - env
+paths:
+    tests: acceptance-tests
+    log: acceptance-tests/_output
+    data: acceptance-tests/_data
+    helpers: acceptance-tests/_support
+settings:
+    colors: true
+    memory_limit: 4096M
+modules:
+    config:
+        \Helper\WPDb:
+            dsn: 'mysql:host=mysql;port=3306;dbname=wordpress'
+            user: 'wordpress'
+            password: 'wordpress'
+            dump: 'dump.sql'
+            populate: true
+            cleanup: true
+            reconnect: true
+            waitlock: 0
+            url: 'http://wordpress'
+            urlReplacement: true
+            tablePrefix: 'wp_'
+        WPWebDriver:
+            host: chrome
+            url: 'http://wordpress'
+            browser: chrome
+            port: 4444
+            window_size: '2560x1440'
+            restart: true
+            wait: 0
+            adminUsername: admin
+            adminPassword: password
+            adminPath: /wp-admin
+        WPLoader:
+            loadOnly: true
+            wpRootFolder: /wp-core
+            dbName: wordpress
+            dbHost: mysql
+            dbUser: wordpress
+            dbPassword: wordpress
+        WPFilesystem:
+            wpRootFolder: /wp-core
+        Mailtrap:
+            client_id: '%MAILTRAP_CLIENT_ID%'
+            inbox_id: '%MAILTRAP_INBOX_ID%'
+            cleanup: false
