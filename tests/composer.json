@@ -8,7 +8,10 @@
   "require-dev": {
     "lucatume/wp-browser": "^2.2",
     "whatdafox/codeception-mailtrap": "^1.4",
-    "polevaultweb/codeception-wait": "^1.0"
+    "polevaultweb/codeception-wait": "^1.0",
+    "codeception/module-webdriver": "^1.1",
+    "codeception/module-filesystem": "^1.0",
+    "codeception/module-db": "^1.0"
   },
   "config": {
     "platform": {
