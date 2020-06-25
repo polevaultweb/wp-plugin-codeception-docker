@@ -31,6 +31,22 @@ class AcceptanceTester extends \Codeception\Actor
 		$this->activatePlugin( 'wp-plugin-codeception-docker' );
 	}
 
+	public function login( ) {
+		$this->loginAsAdmin();
+		$this->wait(2);
+		if ( $this->seeOnPage('Administration email verification') ) {
+			$this->click( 'The email is correct');
+			$this->wait(1);
+		}
+
+		if ( $this->seeOnPage( 'Database Update Required' ) ) {
+			$this->click( 'Update WordPress Database');
+			$this->waitForText('Update Complete');
+			$this->click('Continue');
+			$this->wait(1);
+		}
+	}
+
 	/**
 	 * Check if text exists on page to be used in a conditional.
 	 *
