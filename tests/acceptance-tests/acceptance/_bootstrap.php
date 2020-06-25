@@ -1,4 +1,7 @@
 <?php
+
+// TODO WP constants not available for some reason
+return;
 // Here you can initialize variables that will be available to your tests
 function copy_to_dir( $pattern, $dir ) {
 	foreach ( glob( $pattern ) as $file ) {
